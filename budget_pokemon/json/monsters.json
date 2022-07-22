@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Pikachu",
+    "hp": 250,
+    "type": ["electric"],
+    "weaknesses": [
+      {
+        "type": "ground",
+        "multiplier": 2
+      }
+    ],
+    "strengths": [
+      {
+        "type": "flying",
+        "multiplier": 0.5
+      },
+      {
+        "type": "steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "electric",
+        "multiplier": 0.5
+      }
+    ],
+    "moves": [
+      {
+        "name": "Thunderbolt",
+        "damage": 30,
+        "pp": 10,
+        "move_type": "electric",
+        "accuracy": 90,
+        "category": "Special",
+        "status_ailment": "Paralyze"
+      },
+      {
+        "name": "Bite",
+        "damage": 20,
+        "pp": 15,
+        "move_type": "dark",
+        "accuracy": 80,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Thunder Wave",
+        "damage": null,
+        "pp": 10,
+        "move_type": "electric",
+        "accuracy": 70,
+        "category": "Status",
+        "status_ailment": "Paralyze"
+      },
+      {
+        "name": "Thunder",
+        "damage": 40,
+        "pp": 5,
+        "move_type": "normal",
+        "accuracy": 60,
+        "category": "Special",
+        "status_ailment": null
+      }
+    ]
+  },
+  {
+    "name": "Squirtle",
+    "hp": 300,
+    "type": ["water"],
+    "weaknesses": ["grass", "electric"],
+    "strengths": ["steel", "water", "fire", "ice"],
+    "moves": [
+      {
+        "name": "Water Gun",
+        "damage": 30,
+        "pp": 15,
+        "move_type": "water",
+        "accuracy": 100,
+        "category": "Special",
+        "status_ailment": null
+      },
+      {
+        "name": "Bubble Beam",
+        "damage": 20,
+        "pp": 20,
+        "move_type": "water",
+        "accuracy": 100,
+        "category": "Special",
+        "status_ailment": null
+      },
+      {
+        "name": "Pound",
+        "damage": 10,
+        "pp": 20,
+        "move_type": "normal",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": 40,
+        "pp": 5,
+        "move_type": "water",
+        "accuracy": 60,
+        "category": "Special",
+        "status_ailment": null
+      }
+    ]
+  },
+  {
+    "name": "Charmander",
+    "hp": 265,
+    "type": ["fire"],
+    "weaknesses": ["water", "ground", "rock"],
+    "strengths": ["grass", "bug", "fairy", "ice", "steel", "fire"],
+    "moves": [
+      {
+        "name": "Ember",
+        "damage": 30,
+        "pp": 15,
+        "move_type": "fire",
+        "accuracy": 100,
+        "category": "Special",
+        "status_ailment": "Burn"
+      },
+      {
+        "name": "Slash",
+        "damage": 25,
+        "pp": 10,
+        "move_type": "normal",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Iron Claw",
+        "damage": 15,
+        "pp": 10,
+        "move_type": "steel",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": 40,
+        "pp": 5,
+        "move_type": "fire",
+        "accuracy": 60,
+        "category": "Special",
+        "status_ailment": null
+      }
+    ]
+  },
+  {
+    "name": "Bulbasaur",
+    "hp": 310,
+    "type": ["grass"],
+    "weaknesses": ["fire", "ice", "flying", "bug", "poison"],
+    "strengths": ["grass", "electric", "water", "ground"],
+    "moves": [
+      {
+        "name": "Razor Leaf",
+        "damage": 30,
+        "pp": 15,
+        "move_type": "grass",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Vine Whip",
+        "damage": 20,
+        "pp": 10,
+        "move_type": "grass",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Sleep Powder",
+        "damage": null,
+        "pp": 15,
+        "move_type": "grass",
+        "accuracy": 70,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Solar Beam",
+        "damage": 40,
+        "pp": 5,
+        "move_type": "grass",
+        "accuracy": 60,
+        "category": "Special",
+        "status_ailment": null
+      }
+    ]
+  },
+  {
+    "name": "Skarmory",
+    "hp": 240,
+    "type": ["steel", "flying"],
+    "weaknesses": ["fire", "ice", "flying", "bug", "poison"],
+    "strengths": ["grass", "electric", "water", "ground"],
+    "moves": [
+      {
+        "name": "Razor Leaf",
+        "damage": 30,
+        "pp": 15,
+        "move_type": "grass",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Vine Whip",
+        "damage": 20,
+        "pp": 10,
+        "move_type": "grass",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Sleep Powder",
+        "damage": null,
+        "pp": 15,
+        "move_type": "grass",
+        "accuracy": 70,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Solar Beam",
+        "damage": 40,
+        "pp": 5,
+        "move_type": "grass",
+        "accuracy": 60,
+        "category": "Special",
+        "status_ailment": null
+      }
+    ]
+  }
+]
