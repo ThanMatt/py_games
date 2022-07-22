@@ -54,19 +54,19 @@ def boardChecker():
 
 	return flag
 
+
 def updateTurn(p1State, p2State):
 	global p1,p2
 	p1=p1State
 	p2=p2State
 
+
 def updateMissedTurn(missedTurn):
 	global missed
 	missed=missedTurn
 
+
 def player2Move(move, numOfMoves):
-	print("board2")
-	print("move:", move)
-	print("numOfMoves:", numOfMoves)
 	if numOfMoves==0:
 		if p1:
 			updateTurn(False, True)
@@ -79,9 +79,8 @@ def player2Move(move, numOfMoves):
 		player1Move(move+1, numOfMoves)
 		return
 
+
 def player1Move(move, numOfMoves):
-	print("move:", move)
-	print("numOfMoves:", numOfMoves)
 	if numOfMoves==0:
 		if p2:
 			updateTurn(True, False)
@@ -99,8 +98,6 @@ def play():
 	move = 0
 	while(boardChecker()):
 		printBoard()
-		print("p1:",p1)
-		print("p2:",p2)
 		print("\t\tPlayer 2's move") if p2 else print("\t\tPlayer 1's move")
 		playerInput = input("\t\tEnter number: 	")
 		startMove = int(playerInput)
@@ -113,11 +110,7 @@ def play():
 			numOfMoves = player1[startMove]
 			player1[startMove]=0
 			player1Move(startMove+1, numOfMoves)
-		print("missed: ", missed)
-		if not missed:
-			updateTurn(p2,p1)
-		else:
-			updateMissedTurn(False)
+		pdateTurn(p2,p1) if not missed else updateMissedTurn(False)
 
 
 
@@ -143,9 +136,8 @@ def start():
 	print("\n")
 	print("\n")
 
-	# time.sleep(2)
+	time.sleep(2)
 	print("\n")
-	# initGame()
 	play()
 
 start()
