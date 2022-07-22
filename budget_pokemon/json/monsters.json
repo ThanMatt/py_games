@@ -66,8 +66,34 @@
     "name": "Squirtle",
     "hp": 300,
     "type": ["water"],
-    "weaknesses": ["grass", "electric"],
-    "strengths": ["steel", "water", "fire", "ice"],
+    "weaknesses": [
+      {
+        "type": "electric",
+        "multiplier": 2
+      },
+      {
+        "type": "grass",
+        "multiplier": 2
+      }
+    ],
+    "strengths": [
+      {
+        "type": "steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "water",
+        "multiplier": 0.5
+      },
+      {
+        "type": "fire",
+        "multiplier": 0.5
+      },
+      {
+        "type": "ice",
+        "multiplier": 0.5
+      }
+    ],
     "moves": [
       {
         "name": "Water Gun",
@@ -111,8 +137,46 @@
     "name": "Charmander",
     "hp": 265,
     "type": ["fire"],
-    "weaknesses": ["water", "ground", "rock"],
-    "strengths": ["grass", "bug", "fairy", "ice", "steel", "fire"],
+    "weaknesses": [
+      {
+        "type": "water",
+        "multiplier": 2
+      },
+      {
+        "type": "ground",
+        "multiplier": 2
+      },
+      {
+        "type": "rock",
+        "multiplier": 2
+      }
+    ],
+    "strengths": [
+      {
+        "type": "grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "fairy",
+        "multiplier": 0.5
+      },
+      {
+        "type": "ice",
+        "multiplier": 0.5
+      },
+      {
+        "type": "steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "fire",
+        "multiplier": 0.5
+      }
+    ],
     "moves": [
       {
         "name": "Ember",
@@ -133,7 +197,7 @@
         "status_ailment": null
       },
       {
-        "name": "Iron Claw",
+        "name": "Metal Claw",
         "damage": 15,
         "pp": 10,
         "move_type": "steel",
@@ -156,8 +220,46 @@
     "name": "Bulbasaur",
     "hp": 310,
     "type": ["grass"],
-    "weaknesses": ["fire", "ice", "flying", "bug", "poison"],
-    "strengths": ["grass", "electric", "water", "ground"],
+    "weaknesses": [
+      {
+        "type": "fire",
+        "multiplier": 2
+      },
+      {
+        "type": "ice",
+        "multiplier": 2
+      },
+      {
+        "type": "flying",
+        "multiplier": 2
+      },
+      {
+        "type": "bug",
+        "multiplier": 2
+      },
+      {
+        "type": "poison",
+        "multiplier": 2
+      }
+    ],
+    "strengths": [
+      {
+        "type": "grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "electric",
+        "multiplier": 0.5
+      },
+      {
+        "type": "water",
+        "multiplier": 0.5
+      },
+      {
+        "type": "ground",
+        "multiplier": 0.5
+      }
+    ],
     "moves": [
       {
         "name": "Razor Leaf",
@@ -201,43 +303,93 @@
     "name": "Skarmory",
     "hp": 240,
     "type": ["steel", "flying"],
-    "weaknesses": ["fire", "ice", "flying", "bug", "poison"],
-    "strengths": ["grass", "electric", "water", "ground"],
+    "weaknesses": [
+      {
+        "type": "fire",
+        "multiplier": 2
+      },
+      {
+        "type": "electric",
+        "multiplier": 2
+      }
+    ],
+    "strengths": [
+      {
+        "type": "normal",
+        "multiplier": 0.5
+      },
+      {
+        "type": "flying",
+        "multiplier": 0.5
+      },
+      {
+        "type": "bug",
+        "multiplier": 0.25
+      },
+      {
+        "type": "steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "grass",
+        "multiplier": 0.25
+      },
+      {
+        "type": "psychic",
+        "multiplier": 0.5
+      },
+      {
+        "type": "dragon",
+        "multiplier": 0.5
+      },
+      {
+        "type": "fairy",
+        "multiplier": 0.5
+      },
+      {
+        "type": "poison",
+        "multiplier": 0
+      },
+      {
+        "type": "ground",
+        "multiplier": 0
+      }
+    ],
     "moves": [
       {
-        "name": "Razor Leaf",
+        "name": "Steel Wing ",
         "damage": 30,
-        "pp": 15,
-        "move_type": "grass",
-        "accuracy": 100,
-        "category": "Physical",
-        "status_ailment": null
-      },
-      {
-        "name": "Vine Whip",
-        "damage": 20,
         "pp": 10,
-        "move_type": "grass",
+        "move_type": "steel",
+        "accuracy": 80,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Fury Attack",
+        "damage": 15,
+        "pp": 15,
+        "move_type": "normal",
+        "accuracy": 90,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Peck",
+        "damage": 10,
+        "pp": 20,
+        "move_type": "flying",
         "accuracy": 100,
         "category": "Physical",
         "status_ailment": null
       },
       {
-        "name": "Sleep Powder",
-        "damage": null,
-        "pp": 15,
-        "move_type": "grass",
-        "accuracy": 70,
-        "category": "Physical",
-        "status_ailment": null
-      },
-      {
-        "name": "Solar Beam",
+        "name": "Brave Bird",
         "damage": 40,
         "pp": 5,
-        "move_type": "grass",
+        "move_type": "physical",
         "accuracy": 60,
-        "category": "Special",
+        "category": "Physical",
         "status_ailment": null
       }
     ]
