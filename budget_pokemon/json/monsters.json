@@ -2,6 +2,7 @@
   "pokemons": [
     {
       "name": "Pikachu",
+      "speed": 90,
       "hp": 250,
       "types": ["electric"],
       "weaknesses": [
@@ -65,6 +66,7 @@
     },
     {
       "name": "Squirtle",
+      "speed": 43,
       "hp": 300,
       "types": ["water"],
       "weaknesses": [
@@ -136,6 +138,7 @@
     },
     {
       "name": "Charmander",
+      "speed": 65,
       "hp": 265,
       "types": ["fire"],
       "weaknesses": [
@@ -213,12 +216,13 @@
           "move_type": "fire",
           "accuracy": 60,
           "category": "Special",
-          "status_ailment": null
+          "status_ailment": "Burn"
         }
       ]
     },
     {
       "name": "Bulbasaur",
+      "speed": 45,
       "hp": 310,
       "types": ["grass"],
       "weaknesses": [
@@ -302,6 +306,7 @@
     },
     {
       "name": "Pidgey",
+      "speed": 56,
       "hp": 240,
       "types": ["flying", "normal"],
       "weaknesses": [
@@ -377,6 +382,7 @@
     },
     {
       "name": "Sandshrew",
+      "speed": 40,
       "hp": 250,
       "types": ["ground"],
       "weaknesses": [

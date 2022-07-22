@@ -28,12 +28,13 @@ def init_game():
 				types=pokemon["types"],
 				weaknesses=pokemon["weaknesses"],
 				strengths=pokemon["strengths"],
-				moves=pokemon["moves"]
+				moves=pokemon["moves"],
+				speed=pokemon["speed"]
 			)
 		)
 
 	for pokemon in pokemons:
-		print(pokemon.get_name())
+		print(pokemon.get_name(), pokemon.get_speed())
 	# init pokemon 1
 	# pikachu = classes.Pokemon(
 	# 		name='Pikachu',
