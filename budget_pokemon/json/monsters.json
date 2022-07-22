@@ -300,12 +300,16 @@
     ]
   },
   {
-    "name": "Skarmory",
+    "name": "Pidgey",
     "hp": 240,
-    "type": ["steel", "flying"],
+    "type": ["flying", "normal"],
     "weaknesses": [
       {
-        "type": "fire",
+        "type": "rock",
+        "multiplier": 2
+      },
+      {
+        "type": "ice",
         "multiplier": 2
       },
       {
@@ -315,44 +319,20 @@
     ],
     "strengths": [
       {
-        "type": "normal",
-        "multiplier": 0.5
-      },
-      {
-        "type": "flying",
-        "multiplier": 0.5
-      },
-      {
-        "type": "bug",
-        "multiplier": 0.25
-      },
-      {
-        "type": "steel",
-        "multiplier": 0.5
-      },
-      {
-        "type": "grass",
-        "multiplier": 0.25
-      },
-      {
-        "type": "psychic",
-        "multiplier": 0.5
-      },
-      {
-        "type": "dragon",
-        "multiplier": 0.5
-      },
-      {
-        "type": "fairy",
-        "multiplier": 0.5
-      },
-      {
-        "type": "poison",
+        "type": "ghost",
         "multiplier": 0
       },
       {
         "type": "ground",
         "multiplier": 0
+      },
+      {
+        "type": "bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "grass",
+        "multiplier": 0.5
       }
     ],
     "moves": [
@@ -389,6 +369,77 @@
         "pp": 5,
         "move_type": "physical",
         "accuracy": 60,
+        "category": "Physical",
+        "status_ailment": null
+      }
+    ]
+  },
+  {
+    "name": "Sandshrew",
+    "hp": 250,
+    "type": ["ground"],
+    "weaknesses": [
+      {
+        "type": "grass",
+        "multiplier": 2
+      },
+      {
+        "type": "ice",
+        "multiplier": 2
+      },
+      {
+        "type": "water",
+        "multiplier": 2
+      }
+    ],
+    "strengths": [
+      {
+        "type": "poison",
+        "multiplier": 0.5
+      },
+      {
+        "type": "rock",
+        "multiplier": 0.5
+      },
+      {
+        "type": "electric",
+        "multiplier": 0
+      }
+    ],
+    "moves": [
+      {
+        "name": "Mud Slap",
+        "damage": 20,
+        "pp": 15,
+        "move_type": "ground",
+        "accuracy": 90,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Scratch",
+        "damage": 10,
+        "pp": 20,
+        "move_type": "normal",
+        "accuracy": 100,
+        "category": "Physical",
+        "status_ailment": null
+      },
+      {
+        "name": "Muddy Water",
+        "damage": 30,
+        "pp": 20,
+        "move_type": "ground",
+        "accuracy": 90,
+        "category": "Special",
+        "status_ailment": null
+      },
+      {
+        "name": "Earthquake",
+        "damage": 35,
+        "pp": 5,
+        "move_type": "physical",
+        "accuracy": 100,
         "category": "Physical",
         "status_ailment": null
       }
