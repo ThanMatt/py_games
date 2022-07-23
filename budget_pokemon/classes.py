@@ -2,11 +2,23 @@
 import os, time
 
 class Pokemon:
-	def __init__(self, name, hp, types, moves):
+	def __init__(self, name, hp, types, weaknesses, strengths, moves, speed):
 		self.name = name
 		self.hp = hp
 		self.types = types
+		self.weaknesses = weaknesses
+		self.strengths = strengths
 		self.moves = moves
+		self.speed = speed
+
+	def get_name(self):
+		return self.name
+	
+	def get_moves(self):
+		return self.moves
+	
+	def get_speed(self):
+		return self.speed
 
 class Move:
 	PHYSICAL = 'Physical'
