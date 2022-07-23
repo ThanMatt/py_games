@@ -19,6 +19,7 @@ def init_json(path):
 	data = json.load(file)
 	return data
 
+
 def init_moves(moves):
 	# :: Creates class for each Pokemon move
 	moves_arr = []
@@ -36,14 +37,20 @@ def init_moves(moves):
 
 	return moves_arr
 
-def init_types_for_pokemon(types, const_types):
+
+def init_types(pokemon, const_types):
 	# :: Maps the initialized Types array to the Pokemon types
 
 	types_arr = []
-	for typ in types:
+	for typ in pokemon["types"]:
 		for i in const_types:
 			if(i.map_name(typ)):
+				i.set_weakness(typ, const_types)
 				types_arr.append(i)
+				print(pokemon["name"], i.get_weakness())
+
+	return types_arr
+
 
 def init_game():
 	# :: Initialize global variables
@@ -56,32 +63,28 @@ def init_game():
 
 	# :: Initialize main Types classes
 	for type_data in types_data['types']:
-		name = type_data+'_obj'
 		name = classes.Type(
 			name=type_data
 		)
-		print(name)
 		types.append(name)
-
 
 	# :: Initialize pokemons
 	for pokemon in pokemon_data['pokemons']:
 		pokemon_obj = classes.Pokemon(
 			name=pokemon["name"],
 			hp=pokemon["hp"],
-			weaknesses=pokemon["weaknesses"],
-			strengths=pokemon["strengths"],
 			speed=pokemon["speed"]
 		)
-		pokemon_obj.set_types(init_types_for_pokemon(pokemon["types"], types))
+		pokemon_obj.set_types(init_types(pokemon, types))
 		pokemon_obj.set_moves(init_moves(pokemon["moves"]))
 		pokemons.append(pokemon_obj)
 		
 
-	for pokemon in pokemons:
-		print(pokemon.get_name(), pokemon.get_speed())
-		print(pokemon.types)
+	# for pokemon in pokemons:
+		# print(pokemon.get_name(), pokemon.get_speed())
+		# print(pokemon.types)
 		# for move in pokemon.moves:
 		# 	print(move.category)
 
 
+init_game()
