@@ -26,12 +26,18 @@ class Pokemon:
 	
 	def get_types(self):
 		return self.types
-	
+
 	def print_pokemon_player(self):
-		pokemon.print_pokemon(self.name)
-	
+		pokemon.print_pokemon(self.name, True)
+
 	def print_pokemon_opponent(self):
-		pokemon.print_pokemon_opponent(self.name)
+		pokemon.print_pokemon_opponent(self.name, True)
+	
+	def get_print_pokemon_player(self):
+		return pokemon.print_pokemon(self.name, False)
+	
+	def get_print_pokemon_opponent(self):
+		return pokemon.print_pokemon_opponent(self.name, False)
 
 class Move:
 	PHYSICAL = 'Physical'

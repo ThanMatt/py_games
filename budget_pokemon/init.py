@@ -84,7 +84,6 @@ def init_game():
 			hp=pokemon["hp"],
 			speed=pokemon["speed"]
 		)
-		print("pokemon obj", pokemon_obj.name)
 		pokemon_obj.set_types(init_types(pokemon["types"], types))
 		pokemon_obj.set_moves(init_moves(pokemon["moves"]))
 		pokemons.append(pokemon_obj)
