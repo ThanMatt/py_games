@@ -1,5 +1,111 @@
 
-import os, time
+import os, time, math
+
+#di daw gagamitin sabi ni baho >:(
+# def battle_screen():
+# 	width = 140
+# 	os.system("clear")
+# 	print("\x1b[8;170;170t")
+# 	space = " "
+# 	overscore = "⎻"
+# 	underscore = "_"
+# 	broken_line = "- "
+# 	double_pipe = "\t||"
+# 	pipe = "|"
+# 	print("\t", underscore*153)
+# 	print("\t", broken_line*77)
+# 	for i in range(0, 40):
+# 		if(i==3):
+# 			print(double_pipe, space*8, pipe, overscore*40, pipe, space*(width-(40+8)), double_pipe)
+# 		elif(i>3 and i<=9):
+# 			print(double_pipe, space*8, pipe, space*40, pipe, space*(width-(40+8)), double_pipe)
+# 		elif(i==10):
+# 			print(double_pipe, space*8, pipe, underscore*40, pipe, space*(width-(40+8)), double_pipe)
+# 		elif(i==25):
+# 			print(double_pipe, space*87, pipe, overscore*40, pipe, space*(width-(40+87)), double_pipe)
+# 		elif(i>25 and i<=31):
+# 			print(double_pipe, space*87, pipe, space*40, pipe, space*(width-(40+87)), double_pipe)
+# 		elif(i==32):
+# 			print(double_pipe, space*87, pipe, underscore*40, pipe, space*(width-(40+87)), double_pipe)
+# 		else:
+# 			print(double_pipe, space*width, double_pipe)
+# 	print("\t", broken_line*77)
+# 	print("\t", overscore*153)
+
+tab = "\t"
+space = " "
+overscore = "⎻"
+underscore = "_"
+broken_line = "- "
+double_pipe = "\t||"
+pipe = "|"
+
+move1 = "Water Gun"
+move2 = "Bubble Beam"
+move3 = "Pound"
+move4 = "Hydro Pump"
+
+string3 = "<name> is <inflicted_status> <name> used <move>"
+string = "What will <name> do?"
+string2 = "<name> is paralyzed, it can't move"
+
+
+def compute_space_needed(width, word):
+	space_needed = width - len(word)
+	return space_needed
+
+def compute_half(width, word):
+	space_needed = compute_space_needed(width, word)
+	half = math.ceil(space_needed/2)
+	return half
+
+def compute_difference(width, word):
+	# print(compute_space_needed(width, word) - compute_half(width, word))
+	return compute_space_needed(width, word) - compute_half(width, word)
+
+def battle_screen():
+	print("\x1b[8;170;170t")
+	menu()
+
+def build_move_row(move1, move2, menu_width):
+	print(
+		tab*2, space*2, pipe, space*menu_width, pipe, pipe, 
+
+		space*compute_difference(math.floor(menu_width/2), move1), move1, 
+		space*(compute_half(math.ceil(menu_width/2), move1)-2), pipe,
+
+		space*compute_difference(math.floor(menu_width/3), move2), move2, 
+		space*(compute_half(math.ceil(menu_width/2), move2)), pipe
+	)
+
+def build_space_around(menu_width):
+	print(
+		tab*2, space*2, pipe, space*menu_width, pipe, 
+		pipe, space*math.ceil(menu_width/2), pipe, 
+		space*(math.floor(menu_width/2)-3), pipe
+	)
+
+def build_borders(symbol, menu_width):
+	print(tab*2, space*2, pipe, symbol*menu_width, pipe, pipe, symbol*menu_width, pipe)
+
+def menu():
+	menu_width = 60
+
+	space_needed = menu_width - len(string2)
+	half = math.ceil(space_needed/2)
+
+	build_borders(overscore, menu_width)
+	build_space_around(menu_width)
+	build_move_row(move1, move2, menu_width)
+	build_space_around(menu_width)
+
+	print(tab*2, space*2, pipe, space*compute_difference(menu_width, string2), string2, 
+		space*(compute_half(menu_width, string2)-2), pipe, pipe, underscore*menu_width, pipe,)
+
+	build_space_around(menu_width)
+	build_move_row(move3, move4, menu_width)
+	build_space_around(menu_width)
+	build_borders(underscore, menu_width)
 
 
 def choose():
