@@ -28,29 +28,38 @@ def init_moves(moves):
 			name=move["name"],
 			damage=move["damage"],
 			pp=move["pp"],
-			move_type=move["move_type"],
 			accuracy=move["accuracy"],
 			status_ailment=move["status_ailment"]
 		)
+		move_obj.set_types(init_types(move["move_type"], types))
 		move_obj.category=move_obj.map_status(move["category"])
 		moves_arr.append(move_obj)
 
 	return moves_arr
 
 
-def init_types(pokemon, const_types):
+def init_types(types, const_types):
 	# :: Maps the initialized Types array to the Pokemon types
 
 	types_arr = []
-	for typ in pokemon["types"]:
+	for typ in types:
 		for i in const_types:
 			if(i.map_name(typ)):
-				i.set_weakness(typ, const_types)
 				types_arr.append(i)
-				print(pokemon["name"], i.get_weakness())
-
+	
 	return types_arr
 
+# def init_types(pokemon, const_types):
+# 	# :: Maps the initialized Types array to the Pokemon types
+
+# 	types_arr = []
+# 	for typ in pokemon["types"]:
+# 		for i in const_types:
+# 			if(i.map_name(typ)):
+# 				i.set_weakness(typ, const_types)
+# 				types_arr.append(i)
+
+# 	return types_arr
 
 def init_game():
 	# :: Initialize global variables
@@ -75,7 +84,8 @@ def init_game():
 			hp=pokemon["hp"],
 			speed=pokemon["speed"]
 		)
-		pokemon_obj.set_types(init_types(pokemon, types))
+		print("pokemon obj", pokemon_obj.name)
+		pokemon_obj.set_types(init_types(pokemon["types"], types))
 		pokemon_obj.set_moves(init_moves(pokemon["moves"]))
 		pokemons.append(pokemon_obj)
 		
@@ -86,5 +96,3 @@ def init_game():
 		# for move in pokemon.moves:
 		# 	print(move.category)
 
-
-init_game()
