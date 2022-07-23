@@ -1,6 +1,11 @@
 import os, time
 
-def print_bulbasaur_opponent(tab):
+opponent_tab= "\t\t\t\t\t\t\t\t\t\t\t"
+player_tab = "\t"
+
+def print_bulbasaur_opponent():
+	global opponent_tab
+	tab = opponent_tab
 	print(tab, "                                           /")
 	print(tab, "                        _,.------....___,.' ',.-.")
 	print(tab, "                     ,-'          _,.--\"        |")
@@ -30,7 +35,9 @@ def print_bulbasaur_opponent(tab):
 	print(tab, " '-.__ __ _,','    '`-..___;-...__   ,.'\\ ____.___.'")
 	print(tab, " `\"^--'..'   '-`-^-'\"--    `-^-'`.''\"\"\"\"\"`.,^.`.--' mh")
 
-def print_charmander_opponent(tab):
+def print_charmander_opponent():
+	global opponent_tab
+	tab = opponent_tab
 	print(tab, "              _.--\"\"`-..")
 	print(tab, "            ,'          `.")
 	print(tab, "          ,'          __  `.")
@@ -66,7 +73,9 @@ def print_charmander_opponent(tab):
 	print(tab, "    \"\"--'---\"\"\"\"\"'        `' '! |! /")
 	print(tab, "                            `\" \" -' mh")
 
-def print_squirtle_opponent(tab):
+def print_squirtle_opponent():
+	global opponent_tab
+	tab = opponent_tab
 	print(tab, "               _,........__")
 	print(tab, "            ,-'            \"`-.")
 	print(tab, "          ,'                   `-.")
@@ -102,6 +111,8 @@ def print_squirtle_opponent(tab):
 	print(tab, "                                  `---.__,--.'mh")
 
 def print_pidgey_opponent():
+	global opponent_tab
+	tab = opponent_tab
 	print(tab, "                   .,")
 	print(tab, "            , _.-','")
 	print(tab, "          \"\"|\"    `\"\"\"\".,")
@@ -138,6 +149,8 @@ def print_pidgey_opponent():
 	print(tab, "                    /.-' mh")
 
 def print_pikachu_opponent():
+	global opponent_tab
+	tab = opponent_tab
 	print(tab, "                                             ,-.")
 	print(tab, "                                          _.|  '")
 	print(tab, "                                        .'  | /")
@@ -183,6 +196,8 @@ def print_pikachu_opponent():
 	print(tab, "             _'....----\"\"\"\"\" mh")
 
 def print_sandshrew_opponent():
+	global opponent_tab
+	tab = opponent_tab
 	print(tab, "          _...-----'`._")
 	print(tab, "      _,-'   _`. .\"\". \\`._")
 	print(tab, "    ,'    ,-'   ` ` |  \\/--.")
@@ -214,7 +229,9 @@ def print_sandshrew_opponent():
 	print(tab, "             , -'    .          __/")
 	print(tab, "             \"------------\"\"\"\"\"\" mh")
 
-def print_charmander(tab):
+def print_charmander():
+	global player_tab
+	tab = player_tab
 	print(tab, "              _.--\"\"`-..")
 	print(tab, "            ,'          `.")
 	print(tab, "          ,'          __  `.")
@@ -236,7 +253,9 @@ def print_charmander(tab):
 	print(tab, "           |                '     \\                `._  ,'")
 	print(tab, "           |                 '     \\                 .'|")
 
-def print_bulbasaur(tab):
+def print_bulbasaur():
+	global player_tab
+	tab = player_tab
 	print(tab, "                                           /")
 	print(tab, "                        _,.------....___,.' ',.-.")
 	print(tab, "                     ,-'          _,.--\"        |")
@@ -256,7 +275,9 @@ def print_bulbasaur(tab):
 	print(tab, "/ L:_  |                 .  \"' :_;                `.'.'")
 	print(tab, ".    \"\"'                  \"\"\"\"\"'                    V")
 
-def print_squirtle(tab):
+def print_squirtle():
+	global player_tab
+	tab = player_tab
 	print(tab, "               _,........__")
 	print(tab, "            ,-'            \"`-.")
 	print(tab, "          ,'                   `-.")
@@ -274,7 +295,9 @@ def print_squirtle(tab):
 	print(tab, "\\_ .          |   `\"\"\"\"'    `.           . \\     \\")
 	print(tab, "  `.          |              `.          |  .     L")
 
-def print_pidgey(tab):
+def print_pidgey():
+	global player_tab
+	tab = player_tab
 	print(tab, "                   .,")
 	print(tab, "            , _.-','")
 	print(tab, "          \"\"|\"    `\"\"\"\".,")
@@ -290,7 +313,9 @@ def print_pidgey(tab):
 	print(tab, "        |         /                `-.")
 	print(tab, "       /          `.                  `-.")
 
-def print_pikachu(tab):
+def print_pikachu():
+	global player_tab
+	tab = player_tab
 	print(tab, "                                             ,-.")
 	print(tab, "                                          _.|  '")
 	print(tab, "                                        .'  | /")
@@ -310,7 +335,9 @@ def print_pikachu(tab):
 	print(tab, "          \\       `.                  _,'     /")
 	print(tab, "           \\        `                        .")
 
-def print_sandshrew(tab):
+def print_sandshrew():
+	global player_tab
+	tab = player_tab
 	print(tab, "          _...-----'`._")
 	print(tab, "      _,-'   _`. .\"\". \\`._")
 	print(tab, "    ,'    ,-'   ` ` |  \\/--.")
@@ -328,6 +355,29 @@ def print_sandshrew(tab):
 	print(tab, "     `,-'-`  / ,'     \\'    j,  \\   ,.'   L               ,-'   . F")
 	print(tab, "     / ,. | / .        \\  .'     \\.-\\     |         _,.-\"`.     `,'")
 
+def print_pokemon(name):
+	switch = {
+		'Sandshrew': print_sandshrew,
+		'Pikachu': print_pikachu,
+		'Squirtle': print_squirtle,
+		'Charmander': print_charmander,
+		'Pidgey': print_pidgey,
+		'Bulbasaur': print_bulbasaur
+	}
+	print_function = switch.get(name)
+	print_function()
+
+def print_pokemon_opponent(name):
+	switch = {
+		'Sandshrew': print_sandshrew_opponent,
+		'Pikachu': print_pikachu_opponent,
+		'Squirtle': print_squirtle_opponent,
+		'Charmander': print_charmander_opponent,
+		'Pidgey': print_pidgey_opponent,
+		'Bulbasaur': print_bulbasaur_opponent
+	}
+	print_function = switch.get(name)
+	print_function()
 
 def animate_attack(print_pokemon, tab):
 	newline = "\n"
