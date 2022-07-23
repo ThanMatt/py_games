@@ -21,15 +21,15 @@ missed=False
 # screen.start_screen()
 init.init_game()
 
-def updateTurn(p1State, p2State):
+def update_turn(p1State, p2State):
 	global p1_turn,p2_turn
 	p1_turn=p1State
 	p2_turn=p2State
 
 
-def updateMissedTurn(missedTurn):
+def update_missed_turn(missed_turn):
 	global missed
-	missed=missedTurn
+	missed=missed_turn
 
 
 def default_message(player):
@@ -125,7 +125,7 @@ def start_game():
 		# attack_sequence()
 		
 		if not missed:
-			updateTurn(p2_turn, p1_turn)
+			update_turn(p2_turn, p1_turn)
 
 		
 
