@@ -346,7 +346,7 @@ def print_pokemon(name, print_state):
 	else:
 		return print_function
 
-def print_pokemon_opponent(name, print_state):
+def print_pokemon_opponent(name, print_state, tab=opponent_tab):
 	switch = {
 		'Sandshrew': print_sandshrew_opponent,
 		'Pikachu': print_pikachu_opponent,
@@ -357,38 +357,38 @@ def print_pokemon_opponent(name, print_state):
 	}
 	print_function = switch.get(name)
 	if print_state:
-		print_function()
+		print_function(tab)
 	else:
 		return print_function
 
-def animate_attack(print_pokemon):
+def animate_attack(pokemon):
 	newline = "\n"
 	for i in range(0, 4):
 		if i%2==0:
 			for j in range(0, 4):
 				os.system("clear")
 				print(newline*j)
-				print_pokemon()
+				print_pokemon_opponent(pokemon, True)
 				time.sleep(0.001)
 		else:
 			for j in range(4, 0, -1):
 				os.system("clear")
 				print(newline*j)
-				print_pokemon()
+				print_pokemon_opponent(pokemon, True)
 				time.sleep(0.001)
 		time.sleep(0.1)
 
-def animate_miss(print_pokemon):
-	newline = "\n"
-	for i in range(0, 4):
+def animate_miss(pokemon):
+	space = " "
+	for i in range(0, 3):
 		if i%2==0:
 			for j in range(0, 4):
 				os.system("clear")
-				print_pokemon(tab*j)
-				time.sleep(0.001)
+				print_pokemon_opponent(pokemon, True, space*(80+(j*2)))
+				time.sleep(0.01)
 		else:
 			for j in range(4, 0, -1):
 				os.system("clear")
-				print_pokemon(tab*j)
-				time.sleep(0.001)
+				print_pokemon_opponent(pokemon, True, space*(80+(j*2)))
+				time.sleep(0.01)
 		time.sleep(0.1)

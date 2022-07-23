@@ -77,18 +77,16 @@ def game_status_checker():
 
 def attack(attacker, move, receiver):
 	chance = attacker.moves[move].accuracy
-	if random.random() < chance:
-		receiver.hp - attacker.moves[move].damage
-		# func_name = receiver.get_print_pokemon_opponent().__name__
-		# pokemon.animate_attack(pokemon.func_name)
+	if random.random() > chance:
+		receiver.hp = receiver.hp - attacker.moves[move].damage
+		pokemon.animate_attack(receiver.name)
 	else:
 		set_message(attacker.name + 'missed!')
+		pokemon.animate_miss(receiver.name)
 
 
 def player1_screen():
 	os.system("clear")
-	# print(player2.print_pokemon_opponent().__name__)
-	# print(player1.print_pokemon_player())
 	player2.print_pokemon_opponent()
 	player1.print_pokemon_player()
 	screen.battle_screen(action_message, player1)
@@ -102,6 +100,16 @@ def player2_screen():
 	player2.print_pokemon_player()
 	screen.battle_screen(action_message, player2)
 
+def attack_sequence():
+	# attack should be here determined by speed
+	# if player1.speed > player2.speed (but should this be the case always?)
+	# attack(player1, move, player2)
+	# attack(player2, move, player1)
+
+	# moves per round should be saved
+	# move = player1.moves[int(player_input)]
+
+	print()
 
 def start_game():
 	while(game_status_checker()):
@@ -113,6 +121,9 @@ def start_game():
 			set_message(default_message(player2))
 			player2_screen()
 
+		# after showing player screen and getting user input for moves,
+		# attack_sequence()
+		
 		if not missed:
 			updateTurn(p2_turn, p1_turn)
 

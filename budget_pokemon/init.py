@@ -88,10 +88,3 @@ def init_game():
 		pokemon_obj.set_moves(init_moves(pokemon["moves"]))
 		pokemons.append(pokemon_obj)
 		
-
-	# for pokemon in pokemons:
-		# print(pokemon.get_name(), pokemon.get_speed())
-		# print(pokemon.types)
-		# for move in pokemon.moves:
-		# 	print(move.category)
-
