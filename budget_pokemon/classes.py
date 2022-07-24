@@ -103,12 +103,14 @@ class Type:
 		for pokemon_type in types:
 			if pokemon_type == self.NORMAL:
 				weakness_types = [self.FIGHTING]
+				
+			elif pokemon_type == self.GRASS:
+				weakness_types = [self.FLYING, self.POISON, self.BUG, self.FIRE, self.ICE]
+
 			elif pokemon_type == self.FIRE:
 				weakness_types = [self.WATER, self.GROUND, self.ROCK]
 			elif pokemon_type == self.WATER:
 				weakness_types = [self.ELECTRIC, self.GRASS]
-			elif pokemon_type == self.GRASS:
-				weakness_types = [self.FLYING, self.POISON, self.BUG, self.FIRE, self.ICE]
 			elif pokemon_type == self.ELECTRIC:
 				weakness_types = [self.GROUND]
 			elif pokemon_type == self.PSYCHIC:
@@ -139,21 +141,21 @@ class Type:
 				weakness_types = [self.FIGHTING, self.GROUND, self.FIRE]
 			for weakness_type in weakness_types:
 				self.weakness.append(self.__get_weakness_type(weakness_type, const_types))
-		
-	def build_pokemon_type(self, types, const_types):
-		weaknesses = self.set_weakness(types, const_types)
-		strengths = self.set_strength(types, const_types)
 
+			result = [dict(tupleized) for tupleized in set(tuple(item.items()) for item in self.weakness)]
 
 	def set_strength(self, types, const_types):
 		strength_types = []
 		for pokemon_type in types:
 			if pokemon_type == self.NORMAL:
 				strength_types = []
-			elif pokemon_type == self.FIRE:
-				strength_types = [self.BUG, self.STEEL, self.FIRE, self.GRASS, self.ICE, self.FAIRY]
+
 			elif pokemon_type == self.WATER:
 				strength_types = [self.WATER, self.FIRE, self.STEEL, self.ICE]
+
+			elif pokemon_type == self.FIRE:
+				strength_types = [self.BUG, self.STEEL, self.FIRE, self.GRASS, self.ICE, self.FAIRY]
+
 			elif pokemon_type == self.GRASS:
 				strength_types = [self.GRASS, self.WATER, self.GROUND, self.ELECTRIC]
 			elif pokemon_type == self.ELECTRIC:

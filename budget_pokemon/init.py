@@ -81,6 +81,7 @@ def init_game():
 		pokemon_obj.set_types(init_types(pokemon["types"], types))
 		pokemon_obj.set_moves(init_moves(pokemon["moves"]))
 		pokemons.append(pokemon_obj)
+		print(pokemon_obj.types[0].weakness)
 		
 
 	# for pokemon in pokemons:
