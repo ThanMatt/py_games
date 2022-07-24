@@ -142,7 +142,14 @@ class Type:
 			for weakness_type in weakness_types:
 				self.weakness.append(self.__get_weakness_type(weakness_type, const_types))
 
-			result = [dict(tupleized) for tupleized in set(tuple(item.items()) for item in self.weakness)]
+		
+		for weakness_type in self.weakness:
+			for strength_type in range(len(self.strength)):
+					if self.strength[strength_type]["type"] == weakness_type["type"]:
+						self.weakness.remove(weakness_type)
+						self.strength.remove(self.strength[strength_type])
+						break
+
 
 	def set_strength(self, types, const_types):
 		strength_types = []
@@ -197,9 +204,8 @@ class Type:
 					self.DRAGON,
 					self.FAIRY
 				]
-
-		for strength_type in strength_types:
-			self.strength.append(self.__get_strength_type(strength_type, const_types))
+			for strength_type in strength_types:
+				self.strength.append(self.__get_strength_type(strength_type, const_types))
 
 
 	def get_strength(self):

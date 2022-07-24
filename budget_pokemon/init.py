@@ -45,6 +45,7 @@ def init_types(types, const_types):
 	for typ in types:
 		for i in const_types:
 			if(i.map_name(typ)):
+				i.set_strength(types, const_types)
 				i.set_weakness(types, const_types)
 				# print(i.get_weakness())
 				types_arr.append(i)
@@ -81,8 +82,12 @@ def init_game():
 		pokemon_obj.set_types(init_types(pokemon["types"], types))
 		pokemon_obj.set_moves(init_moves(pokemon["moves"]))
 		pokemons.append(pokemon_obj)
-		print(pokemon_obj.types[0].weakness)
 		
+	for pokemon in pokemons:
+		print(pokemon.name)
+		for type in pokemon.types:
+			print('Weakness ', type.weakness)
+			print('Strength ', type.strength)
 
 	# for pokemon in pokemons:
 		# print(pokemon.get_name(), pokemon.get_speed())
